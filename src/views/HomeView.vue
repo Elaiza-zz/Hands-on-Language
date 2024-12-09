@@ -37,11 +37,12 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-            
           </ul>
         </div>
       </div>
     </div>
   </nav>
-
+  <v-btn variant="outlined">
+    <RouterLink to="/login" class="text-primar text-decoration-noney">Log in</RouterLink></v-btn
+  >
 </template>
