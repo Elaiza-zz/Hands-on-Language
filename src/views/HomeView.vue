@@ -37,12 +37,14 @@
             <li class="nav-item">
               <a class="nav-link" href="#">Link</a>
             </li>
-
           </ul>
         </div>
       </div>
     </div>
   </nav>
   <div>
-  <button type="button" class="primary"> asdsad</button></div>
+    <button type="button" class="btn btn-primary"><RouterLink class="text-light text-decoration-none" to="/login"
+                >Login</RouterLink
+              ></button>
+  </div>
 </template>
