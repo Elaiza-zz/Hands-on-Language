@@ -80,7 +80,6 @@ const submitForm = async () => {
         console.log('Sign up successful!')
         successNotification('Sign up successful! Please check your email to verify your account.')
       } else {
-
         console.log('Something went wrong, please try again later.')
         console.log('Error creating user:', error)
         errorNotification('Error creating user. Please try again later.')

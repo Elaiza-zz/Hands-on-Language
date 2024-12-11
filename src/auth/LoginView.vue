@@ -105,11 +105,11 @@ onMounted(() => {
     <div class="row justify-content-center align-items-center h-100">
       <!-- Col with responsive width -->
       <div class="col-12 col-md-8 col-lg-5">
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         <!-- Card -->
         <div class="card border-thin p-4 shadow mt-5">
           <h5 class="card-title text-center mb-4">Login Form</h5>
@@ -144,6 +144,7 @@ onMounted(() => {
             <!-- Login Button -->
             <div class="d-grid">
               <button
+                style="background-color: #6665ee"
                 type="login"
                 class="btn btn-primary btn-lg rounded-pill"
               >
@@ -158,13 +159,10 @@ onMounted(() => {
           <!-- Sign-Up Link -->
           <p class="text-center mb-0">
             Don't have an account?
-            <router-link to="/register" class="text-primary fw-bold">
-              Sign up
-            </router-link>
+            <router-link to="/register" class="text-primary fw-bold"> Sign up </router-link>
           </p>
         </div>
       </div>
     </div>
   </div>
 </template>
-
