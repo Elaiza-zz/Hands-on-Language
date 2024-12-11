@@ -3,13 +3,10 @@ import imgFil from "@assets/images/filipino-flag.png"
 </script>
 
 <template>
-    <nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="imgFil/filipino-flag.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Filipino Sign Language
-    </a>
-  </div>
+    <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Hands On Language</a>
+    </div>
 </nav>
 
 </template>
