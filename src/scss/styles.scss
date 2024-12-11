@@ -2,29 +2,14 @@
 @import 'bootstrap/scss/bootstrap';
 
 .welcome-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 85vh; 
-    background-color: #EBEAFF; 
-  }
-  
-  .card-titles {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin: 200px 0;
-  }
-  
-  .content {
-    flex: 1; 
-    display: flex;
-    justify-content: center;
-    align-items: flex-end; 
-    width: 100%; 
-  }
-  
-  .button-container {
-    margin-bottom: 70px; 
-  }
+  background-color: #EBEAFF; /* Light purple background */
+}
+.min-vh-85 {
+  min-height: 85vh; /* Full height for the container */
+}
+.card-titles {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 200px 0;
+}
   
