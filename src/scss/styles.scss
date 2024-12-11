@@ -1,15 +1,40 @@
 // Import all of Bootstrap's CSS
 @import 'bootstrap/scss/bootstrap';
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
 .welcome-container {
-  background-color: #EBEAFF; /* Light purple background */
+  background-color: #FFEBF0; /* Soft pink background */
+  background-image: linear-gradient(135deg, #FFC1CC 25%, transparent 25%, transparent 50%, #FFC1CC 50%, #FFC1CC 75%, transparent 75%, transparent);
+  background-size: 20px 20px;
 }
 .min-vh-85 {
   min-height: 85vh; /* Full height for the container */
 }
 .card-titles {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 200px 0;
+  margin: 50px 0;
+  color: #5A3E6F; /* Dark purple */
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.custom-button {
+  background-color: #FF88A4; /* Light pink */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.custom-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+.custom-button:focus {
+  outline: none;
 }
   
