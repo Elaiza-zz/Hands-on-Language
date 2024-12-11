@@ -8,12 +8,13 @@
       <div class="col">
         <!-- card -->
         <div class="card border-thin px-5 py-5">
+          <h5 class="card-title text-center">Login Form</h5>
           <form @submit.prevent>
             <div class="form-group">
               <label for="userName"></label>
               <input
                 type="email"
-                class="form-control"
+                class="form-control mt-5"
                 id="userName"
                 v-model="userName"
                 placeholder="Enter email"
@@ -30,12 +31,16 @@
                 placeholder="Enter password"
               />
             </div>
-            <button
-              type="submit"
-              class="btn btn-outline-primary btn-block rounded-pill btn-lg mt-2 mb-5"
-            >
-              Login
-            </button>
+            <div class="d-grid gap-2">
+              <button
+                style="background-color: #6665ee"
+
+                type="submit"
+                class="text-light btn btn-outline-primary btn-block rounded-pill btn-lg mt-4 mb-5"
+              >
+                Login
+              </button>
+            </div>
           </form>
           <hr class="my-5" />
           <p class="text-center">
