@@ -100,55 +100,71 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container">
-    <!--! 1 row -->
-    <div class="row justify-content-center">
-      <!--! 1 col -->
-      <div class="col">
-        <!-- card -->
-        <div class="card border-thin px-5 py-5">
-          <h5 class="card-title text-center">Login Form</h5>
+  <div class="container h-100">
+    <!-- Full-height row for centering -->
+    <div class="row justify-content-center align-items-center h-100">
+      <!-- Col with responsive width -->
+      <div class="col-12 col-md-8 col-lg-5">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+        <!-- Card -->
+        <div class="card border-thin p-4 shadow mt-5">
+          <h5 class="card-title text-center mb-4">Login Form</h5>
 
           <form id="form_login">
-            <div class="form-group">
-              <label for="userName"></label>
+            <!-- Email Input -->
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email</label>
               <input
                 name="email"
                 type="email"
-                class="form-control mt-5"
+                class="form-control"
                 id="email"
-                placeholder="Email"
+                placeholder="Enter your email"
                 required
               />
             </div>
-            <div class="form-group">
-              <label for="password"></label>
+
+            <!-- Password Input -->
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
               <input
                 name="password"
                 type="password"
                 class="form-control"
                 id="password"
-                placeholder="Password"
+                placeholder="Enter your password"
                 required
               />
             </div>
-            <div class="d-grid gap-2">
+
+            <!-- Login Button -->
+            <div class="d-grid">
               <button
-                style="background-color: #6665ee"
                 type="login"
-                class="text-light btn btn-outline-primary btn-block rounded-pill btn-lg mt-4 mb-5"
+                class="btn btn-primary btn-lg rounded-pill"
               >
                 Login
               </button>
             </div>
           </form>
-          <hr class="my-5" />
-          <p class="text-center">
+
+          <!-- Divider -->
+          <hr class="my-4" />
+
+          <!-- Sign-Up Link -->
+          <p class="text-center mb-0">
             Don't have an account?
-            <router-link to="/register" class="text-primary">Sign up</router-link>
+            <router-link to="/register" class="text-primary fw-bold">
+              Sign up
+            </router-link>
           </p>
         </div>
       </div>
     </div>
   </div>
 </template>
+
