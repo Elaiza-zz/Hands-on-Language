@@ -6,14 +6,14 @@ import imgHol from "@/assets/images/hol-logo1.jpg"
   <div class="welcome-container">
       <div class="container-fluid">
         <div class="row justify-content-center">
-        
+
 
           <div class="col text-center">
-            <h1 class="card-title">Welcome to Hands On Language</h1>
+            <h1 class="card-titles">Welcome to Hands On Language</h1>
           </div>
         </div>
       </div>
-   
+
     <div class="content">
       <div class="button-container">
         <button type="button" class="btn btn-primary">
@@ -26,5 +26,5 @@ import imgHol from "@/assets/images/hol-logo1.jpg"
   </div>
 </template>
 
-    
+
 

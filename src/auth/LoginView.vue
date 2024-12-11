@@ -1,6 +1,4 @@
-<script>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="container">
@@ -43,8 +41,6 @@
           <p class="text-center">
             Don't have an account?
             <router-link to="/register" class="text-primary">Sign up</router-link>
-
-            
           </p>
         </div>
       </div>
