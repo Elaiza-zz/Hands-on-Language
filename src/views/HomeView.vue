@@ -36,20 +36,25 @@ async function doLogout(event) {
 }
 </script>
 <template>
-  <nav class="navbar bg-dark border-bottom border-body" data-bs-theme="dark">
+  <!-- Navbar -->
+  <nav class="navbar bg-dark border-bottom" data-bs-theme="dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Hands On Language</a>
       <button class="btn btn-primary" @click="doLogout">Logout</button>
     </div>
   </nav>
 
+  <!-- Main Content -->
   <div class="container mt-4">
-    <div class="row">
-      <div class="col-md-4" v-for="language in languageData" :key="language.id">
-        <div class="card mt-5">
-          <div class="card-body">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div class="col" v-for="language in languageData" :key="language.id">
+        <div class="card h-100 shadow-sm mt-5">
+          <br />
+          <br />
+          <br />
+          <div class="card-body text-center">
             <h5 class="card-title">{{ language.language_title }}</h5>
-            <a href="#" class="btn btn-primary">Learn</a>
+            <a href="#" class="btn btn-primary mt-2">Learn</a>
           </div>
         </div>
       </div>
