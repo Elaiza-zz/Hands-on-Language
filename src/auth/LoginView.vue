@@ -12,7 +12,7 @@
         <div class="card border-thin px-5 py-5">
           <form @submit.prevent>
             <div class="form-group">
-              <label for="userName">Email</label>
+              <label for="userName"></label>
               <input
                 type="email"
                 class="form-control"
@@ -22,14 +22,14 @@
               />
             </div>
             <div class="form-group">
-              <label for="password">Password</label>
+              <label for="password"></label>
               <input
                 type="password"
                 class="form-control"
                 id="password"
                 v-model="password"
                 :rules="passwordRules"
-                placeholder="Password"
+                placeholder="Enter password"
               />
             </div>
             <button
@@ -43,6 +43,8 @@
           <p class="text-center">
             Don't have an account?
             <router-link to="/register" class="text-primary">Sign up</router-link>
+
+            
           </p>
         </div>
       </div>
