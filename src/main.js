@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 
 import App from './App.vue'
 import router from './router'
+import Toastify from 'toastify-js';
 
 const app = createApp(App)
 
@@ -18,3 +19,10 @@ import '@/scss/styles.scss'
 
 // Import all of Bootstrap's JS
 import * as bootstrap from 'bootstrap'
+
+
+// Import Toastify
+import "../src/css/toastify.css"
+
+// Make Toastify globally accessible
+app.config.globalProperties.$toast = Toastify;
