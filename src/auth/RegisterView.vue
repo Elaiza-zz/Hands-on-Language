@@ -3,6 +3,37 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '@/utils/supabase.js'
 
+import Toastify from 'toastify-js'
+// !! functionality for notification
+// Success Notification
+function successNotification(message) {
+  Toastify({
+    text: message,
+    duration: 3000,
+    gravity: 'top', // `top` or `bottom`
+    position: 'center', // `left`, `center` or `right`
+    style: {
+      background:
+        'linear-gradient(90deg, rgba(0,150,199,1) 25%, rgba(44,168,209,1) 60%, rgba(82,184,217,1) 90%)',
+    },
+  }).showToast()
+}
+
+// Error Notification
+function errorNotification(message) {
+  Toastify({
+    text: message,
+    duration: 10000,
+    gravity: 'top', // `top` or `bottom`
+    position: 'center', // `left`, `center` or `right`
+    style: {
+      background:
+        'linear-gradient(90deg, rgba(187,10,26,1) 15%, rgba(226,37,54,1) 65%, rgba(255,64,81,1) 90%)',
+    },
+  }).showToast()
+}
+// !! end of functionality
+
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
@@ -47,12 +78,16 @@ const submitForm = async () => {
 
       if (!error) {
         console.log('Sign up successful!')
+        successNotification('Sign up successful! Please check your email to verify your account.')
       } else {
+
         console.log('Something went wrong, please try again later.')
         console.log('Error creating user:', error)
+        errorNotification('Error creating user. Please try again later.')
       }
     } else {
       console.log('Error creating user:', error)
+      errorNotification('Error creating user. Please try again later.')
     }
 
     // Reset Form
