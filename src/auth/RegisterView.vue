@@ -3,6 +3,37 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { supabase } from '@/utils/supabase.js'
 
+import Toastify from 'toastify-js'
+// !! functionality for notification
+// Success Notification
+function successNotification(message) {
+  Toastify({
+    text: message,
+    duration: 3000,
+    gravity: 'top', // `top` or `bottom`
+    position: 'center', // `left`, `center` or `right`
+    style: {
+      background:
+        'linear-gradient(90deg, rgba(0,150,199,1) 25%, rgba(44,168,209,1) 60%, rgba(82,184,217,1) 90%)',
+    },
+  }).showToast()
+}
+
+// Error Notification
+function errorNotification(message) {
+  Toastify({
+    text: message,
+    duration: 10000,
+    gravity: 'top', // `top` or `bottom`
+    position: 'center', // `left`, `center` or `right`
+    style: {
+      background:
+        'linear-gradient(90deg, rgba(187,10,26,1) 15%, rgba(226,37,54,1) 65%, rgba(255,64,81,1) 90%)',
+    },
+  }).showToast()
+}
+// !! end of functionality
+
 const email = ref('')
 const password = ref('')
 const confirmPassword = ref('')
@@ -47,12 +78,16 @@ const submitForm = async () => {
 
       if (!error) {
         console.log('Sign up successful!')
+        successNotification('Sign up successful! Please check your email to verify your account.')
       } else {
+
         console.log('Something went wrong, please try again later.')
         console.log('Error creating user:', error)
+        errorNotification('Error creating user. Please try again later.')
       }
     } else {
       console.log('Error creating user:', error)
+      errorNotification('Error creating user. Please try again later.')
     }
 
     // Reset Form
@@ -68,61 +103,81 @@ const submitForm = async () => {
   }
 }
 </script>
-
 <template>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col">
-        <div class="card border-thin px-5 py-5">
-          <h5 class="card-title text-center">Signup Form</h5>
+  <div class="container h-100">
+    <!-- Full-height row for vertical centering -->
+    <div class="row justify-content-center align-items-center h-100">
+      <!-- Column with responsive sizing -->
+      <div class="col-12 col-md-8 col-lg-5">
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+        <!-- Card -->
+        <div class="card border-thin p-4 shadow mt-5">
+          <h5 class="card-title text-center mb-4">Signup Form</h5>
           <form id="form_register" @submit.prevent="submitForm">
-            <div class="form-group mt-5">
-              <label for="email">Email</label>
+            <!-- Email Input -->
+            <div class="form-group mb-3">
+              <label for="email" class="form-label">Email</label>
               <input
                 type="email"
                 class="form-control"
                 id="email"
                 v-model="email"
-                placeholder="Enter email"
+                placeholder="Enter your email"
                 required
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="password">Password</label>
+
+            <!-- Password Input -->
+            <div class="form-group mb-3">
+              <label for="password" class="form-label">Password</label>
               <input
                 type="password"
                 class="form-control"
                 id="password"
                 v-model="password"
-                placeholder="Password"
+                placeholder="Enter your password"
                 required
               />
             </div>
-            <div class="form-group mt-3">
-              <label for="confirmPassword">Confirm Password</label>
+
+            <!-- Confirm Password Input -->
+            <div class="form-group mb-4">
+              <label for="confirmPassword" class="form-label">Confirm Password</label>
               <input
                 type="password"
                 class="form-control"
                 id="confirmPassword"
                 v-model="confirmPassword"
-                placeholder="Confirm Password"
+                placeholder="Confirm your password"
                 required
               />
             </div>
-            <div class="d-grid gap-2">
+
+            <!-- Signup Button -->
+            <div class="d-grid">
               <button
                 style="background-color: #6665ee"
                 type="submit"
-                class="btn btn-outline-primary btn-lg mt-4 mb-5 text-light"
+                class="btn btn-primary btn-lg rounded-pill text-light"
               >
                 Signup
               </button>
             </div>
           </form>
-          <hr class="my-5" />
-          <p class="text-center">
+
+          <!-- Divider -->
+          <hr class="my-4" />
+
+          <!-- Login Link -->
+          <p class="text-center mb-0">
             Already have an account?
-            <router-link to="/login" class="text-primary text-decoration-none">Login</router-link>
+            <router-link to="/login" class="text-primary fw-bold text-decoration-none">
+              Login
+            </router-link>
           </p>
         </div>
       </div>
