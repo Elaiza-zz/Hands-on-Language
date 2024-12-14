@@ -26,3 +26,4 @@ import "../src/css/toastify.css"
 
 // Make Toastify globally accessible
 app.config.globalProperties.$toast = Toastify;
+

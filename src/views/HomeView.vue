@@ -36,6 +36,7 @@ async function doLogout(event) {
 }
 </script>
 <template>
+
   <!-- Navbar -->
   <nav class="navbar bg-dark border-bottom" data-bs-theme="dark">
     <div class="container-fluid">
@@ -43,6 +44,37 @@ async function doLogout(event) {
       <button class="btn btn-primary" @click="doLogout">Logout</button>
     </div>
   </nav>
+  
+  <!--  <nav class="navbar-home navbar-dark bg-dark fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Hands On Language</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+      
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+          <li class="nav-item1 pt-4 ps-2">
+            <button class="btn btn-outline-light" @click="doAbout">About</button>
+          </li>
+          <li class="nav-item2 pt-4 ps-2">
+            <button class="btn btn-outline-light" @click="doProgress">Progress</button>
+          </li>
+          <li class="nav-item3 pt-4 ps-2">
+            <button class="btn btn-outline-light" @click="doLogout">Logout</button> 
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+     -->
+  
 
   <!-- Main Content -->
   <div class="container mt-4">
@@ -54,10 +86,16 @@ async function doLogout(event) {
           <br />
           <div class="card-body text-center">
             <h5 class="card-title">{{ language.language_title }}</h5>
-            <a href="#" class="btn btn-primary mt-2">Learn</a>
+            <a href="#" class="btn btn-outline-dark mt-2">Learn</a>
           </div>
+          <RouterLink class="btn btn-outline-dark mt-2" to="/level">
+  Learn
+</RouterLink>
         </div>
       </div>
     </div>
   </div>
+
+
+ 
 </template>
