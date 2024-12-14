@@ -34,68 +34,127 @@ async function doLogout(event) {
     console.log('Error logging out: ', error.message)
   }
 }
-</script>
-<template>
 
+// Method to determine classes based on language title
+const getCardClass = (title) => {
+  return {
+    'bg-ph': title === 'Filipino',
+    'bg-us': title !== 'Filipino',
+    'text-light': title === 'Filipino',
+    'text-dark': title !== 'Filipino',
+  }
+}
+</script>
+<style>
+.custom-bg {
+  background: url('../assets/images/background-picture.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw; /* Ensures full viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+}
+
+.bg-ph {
+  background-image: url('../assets/images/filipino-flag.png');
+  background-size: cover;
+  background-position: center;
+  text-color: white !important;
+}
+
+.bg-us {
+  background-image: url('../assets/images/american-flag.webp');
+  background-size: cover;
+  background-position: center;
+  text-color: black;
+}
+</style>
+
+<template>
   <!-- Navbar -->
-  <nav class="navbar bg-dark border-bottom" data-bs-theme="dark">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">Hands On Language</a>
-      <button class="btn btn-primary" @click="doLogout">Logout</button>
+  <nav class="navbar navbar-dark fixed-top py-3" style="height: 80px; background-color: #795757">
+    <div class="container-fluid d-flex align-items-center">
+      <!-- Navbar Brand -->
+      <p
+        class="navbar-brand d-flex align-items-center fs-1"
+        href="#"
+        style="color: #fff; font-size: 2rem"
+      >
+        <img
+          src="../assets/images/cropped_image-logo.png"
+          alt="Logo"
+          class="img-fluid"
+          style="height: 40px; width: auto; margin-right: 10px"
+        />
+        Hands On Language
+      </p>
+
+      <!-- Toggler Button aligned to the right -->
+      <button
+        class="btn btn-outline-light ms-auto"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Offcanvas Menu -->
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel"
+        style="background-color: #795757"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-light" id="offcanvasDarkNavbarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doAbout">
+                About
+              </button>
+            </li>
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doProgress">
+                Progress
+              </button>
+            </li>
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doLogout">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </nav>
-  
-  <!--  <nav class="navbar-home navbar-dark bg-dark fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Hands On Language</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
-      
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Menu</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item1 pt-4 ps-2">
-            <button class="btn btn-outline-light" @click="doAbout">About</button>
-          </li>
-          <li class="nav-item2 pt-4 ps-2">
-            <button class="btn btn-outline-light" @click="doProgress">Progress</button>
-          </li>
-          <li class="nav-item3 pt-4 ps-2">
-            <button class="btn btn-outline-light" @click="doLogout">Logout</button> 
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-     -->
-  
 
   <!-- Main Content -->
-  <div class="container mt-4">
+  <div class="container mt-5 pt-5 custom-bg">
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
       <div class="col" v-for="language in languageData" :key="language.id">
-        <div class="card h-100 shadow-sm mt-5">
-          <br />
-          <br />
-          <br />
+        <div class="card h-100 shadow-sm mt-5" :class="getCardClass(language.language_title)">
           <div class="card-body text-center">
             <h5 class="card-title">{{ language.language_title }}</h5>
-            <a href="#" class="btn btn-outline-dark mt-2">Learn</a>
+            <RouterLink class="btn btn-outline-dark mt-2" to="/level">Learn</RouterLink>
           </div>
-          <RouterLink class="btn btn-outline-dark mt-2" to="/level">
-  Learn
-</RouterLink>
         </div>
       </div>
     </div>
   </div>
-
-
- 
 </template>

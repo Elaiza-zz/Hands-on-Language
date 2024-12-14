@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <div class="container-fluid h-100 d-flex flex-column justify-content-center align-items-center">
@@ -14,13 +12,18 @@
         <br />
         <div class="card border-thin p-4 shadow mt-5 text-center">
           <!-- Logo and Title -->
-          <img
-            src="../assets/images/hol-logo1.jpg"
-            alt="hol-logo"
-            class="img-fluid mx-auto d-block mb-4"
-            style="max-width: 150px"
-          />
-          <h1 class="card-title display-6 fw-bold">Welcome to Hands On Language</h1>
+          <div class="text-center my-4">
+            <!-- Circular Logo -->
+            <img
+              src="../assets/images/hol-logo1.jpg"
+              alt="hol-logo"
+              class="rounded-circle img-fluid mx-auto d-block mb-4"
+              style="max-width: 150px"
+            />
+
+            <!-- Welcome Text -->
+            <h1 class="card-title display-6 fw-bold mt-3">Welcome to Hands On Language</h1>
+          </div>
 
           <!-- Button Section -->
           <div class="button-container mt-4">
