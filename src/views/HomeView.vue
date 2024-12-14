@@ -151,7 +151,7 @@ const getCardClass = (title) => {
         <div class="card h-100 shadow-sm mt-5" :class="getCardClass(language.language_title)">
           <div class="card-body text-center">
             <h5 class="card-title">{{ language.language_title }}</h5>
-            <RouterLink class="btn btn-outline-dark mt-2" to="/level">Learn</RouterLink>
+          <RouterLink class="btn btn-outline-dark mt-2" :style="{ backgroundColor: '#FFEAC5' }" to="/level">Learn</RouterLink>
           </div>
         </div>
       </div>
