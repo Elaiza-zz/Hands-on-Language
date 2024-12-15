@@ -34,18 +34,18 @@ const router = createRouter({
       meta: { requiresAuth: true }, // Require authentication
     },
     {
-      path: '/lessonView',
-      name: 'lessonView',
-      component: LessonsView,
+      path: '/level',
+      name: 'level',
+      component:  LevelView,
       meta: { requiresAuth: true }, // Require authentication
     },
     {
-      path: '/level',
-      name: 'level',
-      component: LevelView,
+      path: '/lesson',
+      name: 'lesson',
+      component: LessonsView,
       meta: { requiresAuth: true }, // Require authentication
     },
-   
+
   ],
 })
 
