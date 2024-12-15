@@ -1,4 +1,24 @@
-<script></script>
+<script setup>
+import { supabase } from '@/utils/supabase.js'
+async function doLogout(event) {
+  // If the event argument is not undefined, prevent the default action of the anchor tag
+  if (event !== undefined) {
+    event.preventDefault()
+  }
+
+  // Supabase Logout
+  let { error } = await supabase.auth.signOut()
+
+  if (error == null) {
+    // Clear local Storage
+    localStorage.clear()
+    // Redirect to account page
+    window.location.pathname = '/'
+  } else {
+    console.log('Error logging out: ', error.message)
+  }
+}
+</script>
 
 <template>
   <!-- Navbar -->
@@ -52,12 +72,12 @@
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item pt-4">
-              <button class="btn btn-link text-decoration-none text-light" @click="doAbout">
+              <button class="btn btn-link text-decoration-none text-light" disabled @click="doAbout">
                 About
               </button>
             </li>
             <li class="nav-item pt-4">
-              <button class="btn btn-link text-decoration-none text-light" @click="doProgress">
+              <button class="btn btn-link text-decoration-none text-light"  disabled @click="doProgress">
                 Progress
               </button>
             </li>

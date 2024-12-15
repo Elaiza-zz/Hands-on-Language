@@ -22,26 +22,6 @@ onMounted(async () => {
     error.value = err
   }
 })
-
-async function doLogout(event) {
-  // If the event argument is not undefined, prevent the default action of the anchor tag
-  if (event !== undefined) {
-    event.preventDefault()
-  }
-
-  // Supabase Logout
-  let { error } = await supabase.auth.signOut()
-
-  if (error == null) {
-    // Clear local Storage
-    localStorage.clear()
-    // Redirect to account page
-    window.location.pathname = '/'
-  } else {
-    console.log('Error logging out: ', error.message)
-  }
-}
-
 // Method to determine classes based on language title
 const getCardClass = (title) => {
   return {
