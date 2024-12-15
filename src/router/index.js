@@ -6,6 +6,7 @@ import HomeView from '../views/HomeView.vue'
 import LessonsView from '../views/system/LessonsView.vue'
 import LevelView from '../views/system/LevelView.vue'
 
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
