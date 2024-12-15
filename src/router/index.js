@@ -34,8 +34,8 @@ const router = createRouter({
       meta: { requiresAuth: true }, // Require authentication
     },
     {
-      path: '/lesson',
-      name: 'lesson',
+      path: '/lessonView',
+      name: 'lessonView',
       component: LessonsView,
       meta: { requiresAuth: true }, // Require authentication
     },
@@ -45,6 +45,7 @@ const router = createRouter({
       component: LevelView,
       meta: { requiresAuth: true }, // Require authentication
     },
+   
   ],
 })
 

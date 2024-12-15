@@ -1,77 +1,89 @@
-<script setup> 
+<script setup>
+
 </script>
-
-<template>
-  <!-- 
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Language Levels</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        body {
-            background-image: url('/mnt/data/bg-blurry.png');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-        }
-        .custom-bg-basic {
-            background-color: #fff0d1;
-        }
-        .custom-bg-intermediate {
-            background-color: #ffdbb5;
-        }
-        .custom-bg-advanced {
-            background-color: #f0bb78;
-        }
+<style>
+.custom-bg {
+  background: url('src/assets/images/background-picture.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
+  width: 100vw; /* Ensures full viewport width */
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #fff;
+}
     </style>
-</head>
-<body>
-    <nav class="navbar navbar-expand-lg" style="background-color: #795757;">
-        <div class="container-fluid d-flex justify-content-between align-items-center">
-            <div class="d-flex align-items-center gap-2">
-                <img src="https://placehold.co/40x40/795757/ffffff.svg?text=SL" alt="Logo" class="rounded-circle" style="width: 40px; height: 40px;">
-                <h1 class="text-white mb-0" style="font-family: monospace; font-size: 1.5rem;">Levels</h1>
-            </div>
-            <button class="btn btn-link text-white" aria-label="Menu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
-                    <path d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-    </nav>
+<template>
+    <!-- Navbar -->
+  <nav class="navbar navbar-dark fixed-top py-3" style="height: 80px; background-color: #795757">
+    <div class="container-fluid d-flex align-items-center">
+      <!-- Navbar Brand -->
+      <p
+        class="navbar-brand d-flex align-items-center fs-1"
+        href="#"
+        style="color: #fff; font-size: 2rem"
+      >
+        <img
+          src="src/assets/images/cropped_image-logo.png"
+          alt="Logo"
+          class="img-fluid"
+          style="height: 40px; width: auto; margin-right: 10px"
+        />
+        Hands On Language
+      </p>
 
-    <main class="container my-5">
-        <div class="d-grid gap-4">
-            <button class="btn custom-bg-basic shadow-sm py-3 text-center fs-4 fw-semibold" style="font-family: monospace;" onclick="handleButtonClick(this)">
-                Basic
-            </button>
-            <button class="btn custom-bg-intermediate shadow-sm py-3 text-center fs-4 fw-semibold" style="font-family: monospace;" onclick="handleButtonClick(this)">
-                Intermediate
-            </button>
-            <button class="btn custom-bg-advanced shadow-sm py-3 text-center fs-4 fw-semibold" style="font-family: monospace;" onclick="handleButtonClick(this)">
-                Advanced
-            </button>
-        </div>
-    </main>
+      <!-- Toggler Button aligned to the right -->
+      <button
+        class="btn btn-outline-light ms-auto"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasDarkNavbar"
+        aria-controls="offcanvasDarkNavbar"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <script>
-        function handleButtonClick(button) {
-            button.classList.add('active');
-            setTimeout(() => button.classList.remove('active'), 100);
-        }
-    </script>
-</body>
-</html>
-<RouterLink class="btn btn-outline-dark mt-2" to="/Home">
-  Learn
-</RouterLink>
-  -->
+      <!-- Offcanvas Menu -->
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel"
+        style="background-color: #795757"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title text-light" id="offcanvasDarkNavbarLabel">Menu</h5>
+          <button
+            type="button"
+            class="btn-close btn-close-white"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doAbout">
+                About
+              </button>
+            </li>
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doProgress">
+                Progress
+              </button>
+            </li>
+            <li class="nav-item pt-4">
+              <button class="btn btn-link text-decoration-none text-light" @click="doLogout">
+                Logout
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
 
 
 </template>
-
-

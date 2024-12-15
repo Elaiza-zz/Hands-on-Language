@@ -150,10 +150,11 @@ const getCardClass = (title) => {
       <div class="col" v-for="language in languageData" :key="language.id">
         <div class="card h-100 shadow-sm mt-5" :class="getCardClass(language.language_title)">
           <div class="card-body text-center">
-            <h5 class="card-title">{{ language.language_title }}</h5>
+            <h5 class="card-title fs-2">{{ language.language_title }}</h5>
           <RouterLink class="btn btn-outline-dark mt-2" :style="{ backgroundColor: '#FFEAC5' }" to="/level">Learn</RouterLink>
           </div>
-        </div>
+         <br>
+        </div> 
       </div>
     </div>
   </div>
