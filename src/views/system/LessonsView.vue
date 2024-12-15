@@ -1,9 +1,7 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <style>
-       .custom-bg {
+.custom-bg {
   background: url('src/assets/images/background-picture.png') no-repeat center center;
   background-size: cover;
   min-height: 100vh;
@@ -13,11 +11,11 @@
   overflow: hidden;
   color: #fff;
 }
-    </style>
+</style>
 
 <template>
- <!-- Navbar -->
- <nav class="navbar navbar-dark fixed-top py-3" style="height: 80px; background-color: #795757">
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark fixed-top py-3" style="height: 80px; background-color: #795757">
     <div class="container-fluid d-flex align-items-center">
       <!-- Navbar Brand -->
       <p
@@ -26,7 +24,7 @@
         style="color: #fff; font-size: 2rem"
       >
         <img
-          src="src/assets/images/cropped_image-logo.png"
+          src="/src/assets/images/cropped_image-logo.png"
           alt="Logo"
           class="img-fluid"
           style="height: 40px; width: auto; margin-right: 10px"
@@ -87,4 +85,3 @@
     </div>
   </nav>
 </template>
-

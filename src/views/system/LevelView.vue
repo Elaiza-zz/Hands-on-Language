@@ -1,6 +1,5 @@
-<script setup>
+<script setup></script>
 
-</script>
 <style>
 .custom-bg {
   background: url('src/assets/images/background-picture.png') no-repeat center center;
@@ -12,9 +11,10 @@
   overflow: hidden;
   color: #fff;
 }
-    </style>
+</style>
+
 <template>
-    <!-- Navbar -->
+  <!-- Navbar -->
   <nav class="navbar navbar-dark fixed-top py-3" style="height: 80px; background-color: #795757">
     <div class="container-fluid d-flex align-items-center">
       <!-- Navbar Brand -->
@@ -24,7 +24,7 @@
         style="color: #fff; font-size: 2rem"
       >
         <img
-          src="src/assets/images/cropped_image-logo.png"
+          src="/src/assets/images/cropped_image-logo.png"
           alt="Logo"
           class="img-fluid"
           style="height: 40px; width: auto; margin-right: 10px"
@@ -85,13 +85,21 @@
     </div>
   </nav>
 
-<!-- Main Content -->
-<<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+  <!-- Main Content -->
+  <div class="container text-center custom-bg d-flex align-items-center justify-content-center">
+    <div class="row w-100">
+      <div class="col-12 col-md-6 col-lg-4 mx-auto">
+        <div class="card text-center shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</div>
 </template>

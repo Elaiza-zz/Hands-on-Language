@@ -2,6 +2,11 @@
 import { supabase } from '@/utils/supabase.js'
 import { onMounted, ref } from 'vue'
 
+// Method to save the selected language to local storage
+const saveLanguageToLocalStorage = (languageTitle) => {
+  localStorage.setItem('selectedLanguage', languageTitle)
+}
+
 const languageData = ref(null)
 const error = ref(null)
 
@@ -129,9 +134,7 @@ const getCardClass = (title) => {
               </button>
             </li>
             <li class="nav-item pt-4">
-              <button class="btn btn-link text-decoration-none text-light" @click="doProgress">
-                Progress
-              </button>
+              <button class="btn btn-link text-decoration-none text-light">Progress</button>
             </li>
             <li class="nav-item pt-4">
               <button class="btn btn-link text-decoration-none text-light" @click="doLogout">
@@ -150,11 +153,17 @@ const getCardClass = (title) => {
       <div class="col" v-for="language in languageData" :key="language.id">
         <div class="card h-100 shadow-sm mt-5" :class="getCardClass(language.language_title)">
           <div class="card-body text-center">
-            <h5 class="card-title fs-2">{{ language.language_title }}</h5>
-          <RouterLink class="btn btn-outline-dark mt-2" :style="{ backgroundColor: '#FFEAC5' }" to="/level">Learn</RouterLink>
+            <h5 class="card-title">{{ language.language_title }}</h5>
+            <RouterLink
+              class="btn btn-outline-dark mt-2"
+              :style="{ backgroundColor: '#FFEAC5' }"
+              to="/level"
+              @click="saveLanguageToLocalStorage(language.language_title)"
+            >
+              Learn
+            </RouterLink>
           </div>
-         <br>
-        </div> 
+        </div>
       </div>
     </div>
   </div>
