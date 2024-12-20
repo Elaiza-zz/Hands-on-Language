@@ -72,14 +72,14 @@ async function doLogout(event) {
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item pt-4">
-              <button class="btn btn-link text-decoration-none text-light" disabled @click="doAbout">
+              <router-link to="/about" class="btn btn-link text-decoration-none text-light">
                 About
-              </button>
+              </router-link>
             </li>
             <li class="nav-item pt-4">
-              <button class="btn btn-link text-decoration-none text-light"  disabled @click="doProgress">
+              <router-link to="/progress" class="btn btn-link text-decoration-none text-light">
                 Progress
-              </button>
+              </router-link>
             </li>
             <li class="nav-item pt-4">
               <button class="btn btn-link text-decoration-none text-light" @click="doLogout">
