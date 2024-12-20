@@ -3,9 +3,6 @@ import HeaderNavbar from '@/components/common/Header.vue'
 import { onMounted, ref } from 'vue'
 </script>
 <style scoped>
-.HOL-BG {
-  background-color: #f8f9fa; /* Light gray background */
-}
 
 .card {
   border-radius: 1rem;
