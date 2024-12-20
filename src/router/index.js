@@ -5,7 +5,8 @@ import RegisterView from '../auth/RegisterView.vue'
 import HomeView from '../views/HomeView.vue'
 import LessonsView from '../views/system/LessonsView.vue'
 import LevelView from '../views/system/LevelView.vue'
-
+import ProgressView from '../views/system/Progress.vue'
+import AboutView from '../views/system/About.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,6 +48,19 @@ const router = createRouter({
       meta: { requiresAuth: true }, // Require authentication
     },
 
+    {
+      path: '/progress',
+      name: 'progress',
+      component: ProgressView,
+      meta: { requiresAuth: true }, // Require authentication
+    },
+
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView,
+      meta: { requiresAuth: true }, // Require authentication
+    },
   ],
 })
 
