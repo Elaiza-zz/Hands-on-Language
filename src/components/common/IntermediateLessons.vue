@@ -14,9 +14,7 @@ const videoSources = {
 }
 
 const PhraseSources = {
-  American: [
-    'https://www.youtube.com/embed/v1desDduz5M?si=eX5NymEnIFTv465x',
-  ],
+  American: ['https://www.youtube.com/embed/v1desDduz5M?si=eX5NymEnIFTv465x'],
   Filipino: ['https://www.youtube.com/embed/yfxBeSeDY3c?si=AD_iqNs83d1P4bUL'], // Replace with actual URL
 }
 
@@ -33,7 +31,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="container text-center custom-bg d-flex align-items-center justify-content-center">
+  <div class="container text-center HOL-BG d-flex align-items-center justify-content-center">
     <div class="row w-100">
       <!-- !! show lessons -->
 

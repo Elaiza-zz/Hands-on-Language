@@ -5,23 +5,10 @@ const saveChoiceToLocalStorage = (choice) => {
 }
 </script>
 
-<style>
-.custom-bg {
-  background: url('src/assets/images/background-picture.png') no-repeat center center;
-  background-size: cover;
-  min-height: 100vh;
-  width: 100vw; /* Ensures full viewport width */
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  color: #fff;
-}
-</style>
-
 <template>
   <HeaderNavbar></HeaderNavbar>
   <!-- Main Content -->
-  <div class="container text-center custom-bg d-flex align-items-center justify-content-center">
+  <div class="container text-center HOL-BG d-flex align-items-center justify-content-center">
     <div class="row w-100">
       <!-- Basic -->
       <div class="col-12 col-md-6 col-lg-4 mx-auto">

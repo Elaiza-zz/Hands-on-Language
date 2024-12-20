@@ -29,8 +29,9 @@ onMounted(() => {
 </script
 </script>
 
+
 <template>
-  <div class="container text-center custom-bg d-flex align-items-center justify-content-center">
+  <div class="container text-center HOL-BG d-flex align-items-center justify-content-center">
     <div class="row w-100">
       <!-- !! show lessons -->
 

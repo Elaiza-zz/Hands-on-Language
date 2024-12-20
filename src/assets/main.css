@@ -41,3 +41,15 @@ a,
     padding: 0 2rem;
   }
 }
+
+
+.HOL-BG {
+  background: url('../assets/images/background-picture.png') no-repeat center center;
+  background-size: cover !important;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
