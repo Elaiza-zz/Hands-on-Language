@@ -1,5 +1,8 @@
 <script setup>
+import { useRoute } from 'vue-router' // Import useRoute hook from vue-router
 import { supabase } from '@/utils/supabase.js'
+
+// Logout function
 async function doLogout(event) {
   // If the event argument is not undefined, prevent the default action of the anchor tag
   if (event !== undefined) {
@@ -18,6 +21,14 @@ async function doLogout(event) {
     console.log('Error logging out: ', error.message)
   }
 }
+
+// Get current route
+const route = useRoute()
+
+// Check if the current route is '/about', '/progress', or '/home'
+const isAbout = route.path === '/about'
+const isProgress = route.path === '/progress'
+const isHome = route.path === '/home'
 </script>
 
 <template>
@@ -72,13 +83,30 @@ async function doLogout(event) {
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
             <li class="nav-item pt-4">
-              <router-link to="/about" class="btn btn-link text-decoration-none text-light">
+              <router-link
+                to="/about"
+                class="btn btn-link text-decoration-none text-light"
+                :class="{ disabled: isAbout }"
+              >
                 About
               </router-link>
             </li>
             <li class="nav-item pt-4">
-              <router-link to="/progress" class="btn btn-link text-decoration-none text-light">
+              <router-link
+                to="/progress"
+                class="btn btn-link text-decoration-none text-light"
+                :class="{ disabled: isProgress }"
+              >
                 Progress
+              </router-link>
+            </li>
+            <li class="nav-item pt-4">
+              <router-link
+                to="/home"
+                class="btn btn-link text-decoration-none text-light"
+                :class="{ disabled: isHome }"
+              >
+                Home
               </router-link>
             </li>
             <li class="nav-item pt-4">
